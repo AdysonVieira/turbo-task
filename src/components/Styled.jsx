@@ -6,7 +6,19 @@ export const Title = styled.h1`
   max-width: 60rem;
   margin-inline: auto;
   span {
-    color: #646cff;
+    display: inline-block;
+    background: linear-gradient(
+      160deg, 
+      #76e4ff 0%,
+      #646cff 50%, 
+      #e00ee7 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    color: black;
   }
   `;
 
@@ -20,11 +32,12 @@ export const SubTitle = styled.h2`
 export const FormContent = styled.form`
   display: flex;
   gap: 1rem;
+  margin-bottom: 2rem;
   input {
     flex: 1;
     font-size: 1.6rem;
     padding: 1.2rem 2.4rem;
-    border-radius: 0.5;
+    border-radius: 0.5rem;
     border: 1px solid #5c5c5c;
     outline: none;
   }
@@ -49,4 +62,16 @@ export const FormContent = styled.form`
     background-color: #535bf2;
     border-color: #535bf2;
   }
+  `;
+
+export const TaskCard = styled.p`
+  margin: 0 0 2rem 0;
+  flex: 1;
+  font-size: 1.6rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid #5c5c5c;
+  background-color: #363636;
+  outline: none;
+  text-align: start;
 `;
