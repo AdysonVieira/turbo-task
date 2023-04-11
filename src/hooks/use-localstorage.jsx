@@ -7,8 +7,9 @@ const useLocalStorage = (key, initialValue) => {
     })
 
   const setValue = React.useCallback((value) => {
+    setState(value)
     return window.localStorage.setItem(key, JSON.stringify(value))
-  }, [value])
+  }, [value, key])
 
   return [state, setValue]
 }

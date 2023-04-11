@@ -39,11 +39,12 @@ export const TaskBoxStyled = styled.li`
     height: 2rem;
     position: relative;
     cursor: pointer;
-
+    
   }
   
   &.checked {
     border: 1px solid ${(props) => props.theme.colors.success.succ400};
+    transition: all 0.2s ease;
   }
   
   @media screen and (max-width: ${(props) => props.theme.breakpoints.s} ){
