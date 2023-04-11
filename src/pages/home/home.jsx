@@ -15,7 +15,7 @@ const Home = () => {
       return item.id === task.id ? { ...item, checked: !item.checked } : item
     })
     setTasks(newTasks)
-  }, [tasks])
+  }, [tasks]);
 
   const reset = () => {
     setValue('');
@@ -24,7 +24,7 @@ const Home = () => {
   const removeTask = React.useCallback((task) => {
     const newTasks = tasks.filter((item) => item.id !== task.id)
     setTasks(newTasks)
-  }, [tasks])
+  }, [tasks]);
   
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <Title>Aumente sua <span>produtividade</span></Title>
-      <SubTitle>Crie uma lista de tarefas de forma rápida e prática. Torne seu dia produtivo </SubTitle>
+      <SubTitle>Crie uma lista de tarefas de forma prática e rápida, organize sua rotina e otimize seu tempo. É prático, sem cadastros e sem burocracia.</SubTitle>
       <TaskContainer>
         {tasks.map((task) => (
           <TaskBox

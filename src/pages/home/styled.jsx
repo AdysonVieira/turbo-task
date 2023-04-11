@@ -56,8 +56,8 @@ export const FormHome = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 2rem;
   margin-top: 6.4rem;
+  padding-bottom: 2rem;
   
   @media screen and (max-width: ${(props) => props.theme.breakpoints.s}) {
     flex-direction: column;

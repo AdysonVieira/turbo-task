@@ -20,6 +20,7 @@ export const InputStyled = styled.input`
   font-size: ${(props) => props.theme.fontSize.title.s};
   transition: all 0.2s;
   animation: ${fadeIn} 0.2s forwards;
+  margin-bottom: 2rem;
   
   ::placeholder {
     color: ${(props) => props.theme.colors.gray.g600};
@@ -36,11 +37,13 @@ export const InputStyled = styled.input`
   }
   
   &.error {
+    outline: 1px solid ${(props) => props.theme.colors.error.err500};
     border: 1px solid ${(props) => props.theme.colors.error.err400};
   }
   `;
 
 export const ErrorStyled = styled.span`
+  padding-bottom: 2rem ;
   animation: ${fadeIn} 0.2s forwards;
   color: ${(props) => props.theme.colors.error.err400};
 `;
