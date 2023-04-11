@@ -1,4 +1,5 @@
 import React from 'react'
+import useLocalStorage from '../../hooks/use-localstorage';
 import { HomeContainer, SubTitle, Title, FormHome } from './styled'
 import Input from './components/input/input';
 import Button from './components/button/button';
@@ -6,9 +7,18 @@ import TaskBox from './components/task-list/task-box'
 import { TaskContainer } from './components/task-list/styled'
 
 const Home = () => {
-  const [tasks, setTasks] = React.useState([]);
+  const [tasks, setTasks] = React.useState(() => {
+    let item = window.localStorage.getItem('tasks')
+    return item ? JSON.parse(item) : []
+  });
   const [value, setValue] = React.useState('');
   const [isError, setIsError] = React.useState(false);
+
+  
+  React.useEffect(() => {
+    window.localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
   
   const toggle = React.useCallback((task) => {
     const newTasks = tasks.map((item) => {
@@ -17,18 +27,22 @@ const Home = () => {
     setTasks(newTasks)
   }, [tasks]);
 
+  
   const reset = () => {
     setValue('');
   };
 
+  
   const removeTask = React.useCallback((task) => {
     const newTasks = tasks.filter((item) => item.id !== task.id)
     setTasks(newTasks)
   }, [tasks]);
   
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     value.length === 0 ? setIsError(true) : '';
+    
     if (value.length > 0) {
       setTasks((prev) => [ ...prev, {
         id: new Date().getTime(),
@@ -45,7 +59,7 @@ const Home = () => {
       <Title>Aumente sua <span>produtividade</span></Title>
       <SubTitle>Crie uma lista de tarefas de forma prática e rápida, organize sua rotina e otimize seu tempo. É prático, sem cadastros e sem burocracia.</SubTitle>
       <TaskContainer>
-        {tasks.map((task) => (
+        {tasks && tasks.map((task) => (
           <TaskBox
             key={task.id}
             id={task.id}
