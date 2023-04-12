@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const HomeContainer = styled.div`
+export const HomeContainer = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 120vh;
   max-width: 78rem;
   margin: 0 auto;
   padding: 2rem;

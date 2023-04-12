@@ -12,7 +12,9 @@ export const ProgressBarContainer = styled.div`
     font-size: ${(props) => props.theme.fontSize.text.s};
   }
   .progressbar-border {
-    border: 1px solid ${(props) => props.theme.colors.gray.g600};
+    display: flex;
+    align-items: center;
+    border: 0.05rem solid ${(props) => props.theme.colors.gray.g600};
     border-radius: 0.5rem;
     height: 1rem;
   }

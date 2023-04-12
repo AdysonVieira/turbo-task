@@ -2,7 +2,8 @@ import React from 'react'
 import useLocalStorage from '../../hooks/use-localstorage';
 import { HomeContainer, SubTitle, Title, FormHome } from './styled'
 import Input from './components/input/input';
-import Button from './components/button/button';
+import ButtonPrimary from './components/button/button-primary';
+import ButtonSecondary from './components/button/button-secondary';
 import TaskBox from './components/task-list/task-box'
 import ProgressBar from './components/progress-bar/progress-bar';
 import { TaskContainer } from './components/task-list/styled'
@@ -14,8 +15,7 @@ const Home = () => {
   });
   const [value, setValue] = React.useState('');
   const [isError, setIsError] = React.useState(false);
-  const [progress, setProgress] = React.useState(0)
-
+  const [progress, setProgress] = React.useState(0);
   
   React.useEffect(() => {
     window.localStorage.setItem('tasks', JSON.stringify(tasks))
@@ -56,6 +56,10 @@ const Home = () => {
     };
   };
 
+  const handleClick = React.useCallback(() => {
+    setTasks([])
+  }, []);
+
   React.useEffect(() => {
     const handleProgressBar = () => {
       const total = tasks.length
@@ -66,13 +70,18 @@ const Home = () => {
     setProgress(handleProgressBar())
   }, [tasks])
 
+  React.useEffect(() => {
+    const bodyEl = document.body
+    console.log(bodyEl.scrollTop)
+  }, [tasks])
+
   return (
-    <HomeContainer>
+    <HomeContainer> 
       <Title>Aumente sua <span>produtividade</span></Title>
       <SubTitle>Crie uma lista de tarefas de forma prática e rápida, organize sua rotina e otimize seu tempo. É prático, sem cadastros e sem burocracia.</SubTitle>
       { tasks.length > 0 && <ProgressBar progress={progress}/>}
       <TaskContainer>
-        {tasks && tasks.map((task) => (
+        {tasks?.map((task) => (
           <TaskBox
           key={task.id}
           id={task.id}
@@ -83,7 +92,8 @@ const Home = () => {
           />
           ))}
       </TaskContainer>
-      <FormHome 
+      {tasks.length > 3 && <ButtonSecondary onClick={handleClick}>Limpar lista</ButtonSecondary>}
+      <FormHome
         style={{marginTop:`${tasks.length === 0 ? '0' : '6.4rem'}`, transition: 'all 0.2s ease'}} onSubmit={handleSubmit}>
         <Input
           value={value}
@@ -91,7 +101,7 @@ const Home = () => {
           isError={isError}
           setIsError={setIsError}
           ></Input>
-        <Button>Adicionar tarefa</Button>
+        <ButtonPrimary>Adicionar tarefa</ButtonPrimary>
       </FormHome>
     </HomeContainer>
   );

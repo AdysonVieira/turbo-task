@@ -5,12 +5,11 @@ import GlobalStyle from './styles/global';
 
 
 const App = () => {
+  
   return (
     <Theme>
       <GlobalStyle />
-      <main>
         <Home />
-      </main>
     </Theme>
   )
 }
