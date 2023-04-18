@@ -72,11 +72,11 @@ const Home = () => {
 
   React.useEffect(() => {
     const bodyEl = document.body
-    console.log(bodyEl.scrollTop)
   }, [tasks])
 
   return (
-    <HomeContainer> 
+    <HomeContainer>
+      <img style={{marginBottom: '3.2rem'}}src="../../public/tt-logo.png" alt="" width='60px'/>
       <Title>Aumente sua <span>produtividade</span></Title>
       <SubTitle>Crie uma lista de tarefas de forma prática e rápida, organize sua rotina e otimize seu tempo. É prático, sem cadastros e sem burocracia.</SubTitle>
       { tasks.length > 0 && <ProgressBar progress={progress}/>}
