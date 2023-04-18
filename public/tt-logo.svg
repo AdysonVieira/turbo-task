@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="288" height="288.41" viewBox="0 0 288 288.41">
+  <defs>
+    <linearGradient id="a" data-name="Gradiente sem nome 53" x1="77.48" y1="108" x2="394.25" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#76e4ff"/>
+      <stop offset="0.51" stop-color="#646cff"/>
+      <stop offset="1" stop-color="#e00ee7"/>
+    </linearGradient>
+  </defs>
+  <title>tt-logo</title>
+  <rect x="72" y="216" width="72" height="72.41" style="fill: #fff"/>
+  <path d="M144,0h71.86a0,0,0,0,1,0,0V288a0,0,0,0,1,0,0h0A71.86,71.86,0,0,1,144,216.14V0A0,0,0,0,1,144,0Z" style="fill: #fff"/>
+  <path d="M0,0H71.86a0,0,0,0,1,0,0V288a0,0,0,0,1,0,0h0A71.86,71.86,0,0,1,0,216.14V0A0,0,0,0,1,0,0Z" style="fill: #fff"/>
+  <polygon points="255.38 144 27 144 59.63 72 288 72 255.38 144" style="fill: url(#a)"/>
+  <rect x="216" y="215.59" width="72" height="72.41" style="fill: #fff"/>
+</svg>
