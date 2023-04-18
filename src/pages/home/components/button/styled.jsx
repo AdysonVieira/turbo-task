@@ -23,7 +23,7 @@ export const ButtonSecondaryStyled = styled.button`
   border: 1px solid transparent;
   border-radius: 0.5rem;
   padding: 1.2rem 2.4rem;
-  margin: 2rem 0;
+  margin: 2rem 0 0 auto;
   outline: none;
   font-size: ${(props) => props.theme.fontSize.title.s};
   color: ${(props) => props.theme.colors.gray.g500};

@@ -92,7 +92,7 @@ const Home = () => {
           />
           ))}
       </TaskContainer>
-      {tasks.length > 3 && <ButtonSecondary onClick={handleClick}>Limpar lista</ButtonSecondary>}
+      {tasks.length > 0 && <ButtonSecondary onClick={handleClick}>Limpar lista</ButtonSecondary>}
       <FormHome
         style={{marginTop:`${tasks.length === 0 ? '0' : '6.4rem'}`, transition: 'all 0.2s ease'}} onSubmit={handleSubmit}>
         <Input
@@ -100,7 +100,7 @@ const Home = () => {
           onChange={setValue}
           isError={isError}
           setIsError={setIsError}
-          ></Input>
+        />
         <ButtonPrimary>Adicionar tarefa</ButtonPrimary>
       </FormHome>
     </HomeContainer>
